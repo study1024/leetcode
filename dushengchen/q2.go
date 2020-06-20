@@ -1,9 +1,4 @@
-package q2
-
-type ListNode struct {
-    Val int
-    Next *ListNode
-}
+package dushengchen
 
 /**
  * Definition for singly-linked list.

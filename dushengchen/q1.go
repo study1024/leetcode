@@ -1,4 +1,4 @@
-package golang
+package dushengchen
 
 func twoSum(nums []int, target int) []int {
     a := make(map[int][]int, len(nums))

@@ -1,5 +1,12 @@
-package q7
+package dushengchen
 
+/*
+question:
+    https://leetcode.com/problems/reverse-integer/
+Submission:
+    https://leetcode.com/submissions/detail/231980096/
+
+*/
 
 func reverse(x int) int {
     if x == 0 {
@@ -24,4 +31,3 @@ func reverse(x int) int {
 
     return res
 }
-
