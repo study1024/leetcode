@@ -1,4 +1,4 @@
-package q1
+package golang
 
 func twoSum(nums []int, target int) []int {
     a := make(map[int][]int, len(nums))
