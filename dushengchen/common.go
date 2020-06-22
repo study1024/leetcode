@@ -1,5 +1,6 @@
 package dushengchen
 
+import "fmt"
 
 func MinInt(args ...int) int {
     if len(args) == 0 {
@@ -75,4 +76,9 @@ func AbsInt(a int) int {
        return -a
    }
    return a
+}
+
+func HashInt(arg ...int) string {
+    n := SortInt(arg)
+    return fmt.Sprintf("%#v", n)
 }
