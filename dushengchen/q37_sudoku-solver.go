@@ -22,6 +22,7 @@ func solveSudoku(board [][]byte)  {
     return
 }
 
+//递归遍历每个cell中的allow，尝试填写
 func loopSearch(a [][]*Cell) bool {
     minAllowCellCnt := 10
     mX, mY := -1, -1
@@ -66,8 +67,8 @@ func loopSearch(a [][]*Cell) bool {
 
 
 type Cell struct {
-    Fill byte
-    Allow   map[byte]bool
+    Fill byte   //已经填充的
+    Allow   map[byte]bool //当前允许填充的。不允许填充的key不存在，这样方便统计允许填充的数字
 }
 
 var r = []byte{'1', '2', '3', '4', '5', '6', '7', '8', '9'}
@@ -79,6 +80,7 @@ func newAllowMap()  map[byte]bool {
     return m
 }
 
+//输入转化成cell矩阵
 func covertToCells(board [][]byte)([][]*Cell) {
     a := [][]*Cell{}
     for i := range board {
@@ -110,15 +112,17 @@ func covertToCells(board [][]byte)([][]*Cell) {
 
 //准备填充前的检查
 func preFillCell(a [][]*Cell, fill byte, i, j int) bool {
-    //已经填充了
+    //是否已经填充了
     if a[i][j] == nil || a[i][j].Fill != '.' {
         return false
     }
+    //横排纵列是都已经填写过冲突
     for x := 0; x < 9; x++ {
         if a[i][x].Fill == fill || a[x][j].Fill == fill {
             return false
         }
     }
+    //9宫格中是否填写过
     xStart := i - (i % 3)
     yStart := j - (j % 3)
     for x:= 0; x < 3; x++ {
@@ -131,7 +135,8 @@ func preFillCell(a [][]*Cell, fill byte, i, j int) bool {
     return true
 }
 
-//drop相关cell的allow中的字符，并记录下drop的位置
+//每填写一个字母，就在横排纵列&九宫格中去掉允许的字母，这样下次就不再遍历了
+// drop相关cell的allow中的字符，并记录下drop的位置
 func dropCellAllows(a [][]*Cell, drop byte, i, j int) [][]int {
     ret := [][]int{}
     for x := 0; x < 9; x++ {
@@ -157,6 +162,7 @@ func dropCellAllows(a [][]*Cell, drop byte, i, j int) [][]int {
     return ret
 }
 
+//dropCellAllows的逆操作
 func addCellAllows(a [][]*Cell, add byte, pos [][]int) {
     for _, item := range pos {
         a[item[0]][item[1]].Allow[add] = true
