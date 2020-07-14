@@ -3,7 +3,7 @@ package dushengchen
 
 /**
 Submission:
-    https://leetcode.com/submissions/detail/366393972/
+    https://leetcode.com/submissions/detail/366509188/
 */
 func multiply(num1 string, num2 string) string {
     a := []rune(num1)
