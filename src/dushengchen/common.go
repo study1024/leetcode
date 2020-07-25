@@ -2,6 +2,7 @@ package dushengchen
 
 import "fmt"
 
+//MinInt MinInt
 func MinInt(args ...int) int {
 	if len(args) == 0 {
 		return -1
@@ -15,6 +16,7 @@ func MinInt(args ...int) int {
 	return min
 }
 
+//MaxInt MaxInt
 func MaxInt(args ...int) int {
 	if len(args) == 0 {
 		return -1
@@ -28,6 +30,7 @@ func MaxInt(args ...int) int {
 	return max
 }
 
+//MinFloat64 MinFloat64
 func MinFloat64(args ...float64) float64 {
 	if len(args) == 0 {
 		return -1
@@ -41,6 +44,7 @@ func MinFloat64(args ...float64) float64 {
 	return min
 }
 
+//MaxFloat64 MaxFloat64
 func MaxFloat64(args ...float64) float64 {
 	if len(args) == 0 {
 		return -1
@@ -54,11 +58,13 @@ func MaxFloat64(args ...float64) float64 {
 	return max
 }
 
+//ListNode ListNode
 type ListNode struct {
 	Val  int
 	Next *ListNode
 }
 
+//SortInt SortInt
 func SortInt(a []int) []int {
 	for i := 0; i < len(a); i++ {
 		for j := i + 1; j < len(a); j++ {
@@ -70,6 +76,7 @@ func SortInt(a []int) []int {
 	return a
 }
 
+//AbsInt AbsInt
 func AbsInt(a int) int {
 	if a < 0 {
 		return -a
@@ -77,6 +84,7 @@ func AbsInt(a int) int {
 	return a
 }
 
+//HashInt HashInt
 func HashInt(arg ...int) string {
 	n := SortInt(arg)
 	return fmt.Sprintf("%#v", n)
