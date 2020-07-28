@@ -105,3 +105,24 @@ func RevertInt(a []int) {
 		a[i], a[len(a)-i-1] = a[len(a)-i-1], a[i]
 	}
 }
+
+//CopyInt copy a int slice
+func CopyInt(a []int) []int {
+	b := make([]int, len(a))
+	for i, v := range a {
+		b[i] = v
+	}
+	return b
+}
+
+//InsertToSlice insert v to nums at pos(index from 0)
+func InsertToSlice(nums []int, v, pos int) []int {
+	if pos > len(nums) || pos < 0 {
+		return nil
+	}
+	var ret []int
+	ret = append(ret, nums[0:pos]...)
+	ret = append(ret, v)
+	ret = append(ret, nums[pos:]...)
+	return ret
+}
