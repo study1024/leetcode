@@ -2,14 +2,10 @@ package dushengchen
 
 /**
 Submission:
-	https://leetcode.com/submissions/detail/372743143/
+	https://leetcode.com/submissions/detail/372752824/
 
-	Runtime: 0 ms, faster than 100.00% of Go online submissions for Permutations.
-	Memory Usage: 2.7 MB, less than 51.11% of Go online submissions for Permutations.
-	Next challenges:
-		Permutations II
-		Permutation Sequence
-		Combinations
+Runtime: 4 ms, faster than 77.21% of Go online submissions for Permutations II.
+Memory Usage: 3.5 MB, less than 77.78% of Go online submissions for Permutations II.
 */
 
 func permuteUnique(nums []int) [][]int {
