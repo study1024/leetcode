@@ -98,3 +98,10 @@ func NewIntArray2D(m int, n int) [][]int {
 	}
 	return x
 }
+
+//RevertInt 翻转一个数组
+func RevertInt(a []int) {
+	for i := 0; i < len(a)/2; i++ {
+		a[i], a[len(a)-i-1] = a[len(a)-i-1], a[i]
+	}
+}
