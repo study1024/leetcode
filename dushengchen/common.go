@@ -126,3 +126,17 @@ func InsertToSlice(nums []int, v, pos int) []int {
 	ret = append(ret, nums[pos:]...)
 	return ret
 }
+
+/*
+* TreeNode  Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+*/
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
+}
