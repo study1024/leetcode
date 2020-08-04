@@ -31,7 +31,8 @@ func calculateMinimumHP(dungeon [][]int) int {
 }
 
 func calMinLimit(cost int, limit int) int {
-	if rest := limit - cost; rest <= 0 {
+	rest := limit - cost
+	if rest <= 0 {
 		return 1
 	}
 	return rest

@@ -45,7 +45,8 @@ func search(nums []int, target int) int {
 	if target >= nums[0] {
 		return binarySearch(nums[0:mid+1], target)
 	}
-	if x := binarySearch(nums[mid+1:], target); x == -1 {
+	x := binarySearch(nums[mid+1:], target)
+	if x == -1 {
 		return -1
 	}
 	return mid + x + 1
