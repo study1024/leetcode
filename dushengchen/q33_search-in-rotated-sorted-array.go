@@ -20,7 +20,8 @@ func search(nums []int, target int) int {
 	start := 0
 	end := len(nums) - 1
 	if nums[start] < nums[end] {
-		return binarySearch(nums, target)
+		pos, _ := binarySearch(nums, target)
+		return pos
 	}
 	var mid int
 	for {
@@ -43,9 +44,10 @@ func search(nums []int, target int) int {
 		return -1
 	}
 	if target >= nums[0] {
-		return binarySearch(nums[0:mid+1], target)
+		pos, _ := binarySearch(nums, target)
+		return pos
 	}
-	x := binarySearch(nums[mid+1:], target)
+	x, _ := binarySearch(nums[mid+1:], target)
 	if x == -1 {
 		return -1
 	}

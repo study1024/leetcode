@@ -26,20 +26,38 @@ package dushengchen
 //    }
 //}
 
-func binarySearch(sortedArray []int, lookingFor int) int {
+/**
+    二分查找,sortedArray 升序
+    如果找到，返回（pos，ok）
+    如果没有找到，返回（lookingFor在sortedArray排位，false）
+ */
+func binarySearch(sortedArray []int, lookingFor int) (int, bool) {
+    if len(sortedArray) == 0 {
+        return -1, false
+    }
     var low int = 0
     var high int = len(sortedArray) - 1
+    if sortedArray[low] < lookingFor {
+        return low-1, false
+    }
+    if sortedArray[high] > lookingFor {
+        return high+1, false
+    }
+
     for low <= high {
         mid := low + (high - low)/2
         if sortedArray[mid] == lookingFor {
-            return mid
+            return mid, true
         } else if sortedArray[mid] > lookingFor {
             high = mid -1
         } else {
             low = mid + 1
         }
     }
-    return -1
+    if sortedArray[low] > lookingFor {
+        return low-1, false
+    }
+    return low, false
 }
 
 func simpleSearch(arr []int, lookingFor int) int {
