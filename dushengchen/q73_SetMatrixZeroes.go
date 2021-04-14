@@ -1,4 +1,4 @@
-package main
+package dushengchen
 
 
 /*
@@ -55,9 +55,9 @@ func setZeroes(matrix [][]int)  {
 		}
 	}
 }
-
-func main() {
-	matrix := [][]int{{1,2,3,4},{5,0,7,8},{0,10,11,12},{12,14,15,0}}
-	setZeroes(matrix)
-	println(matrix)
-}
+//
+//func main() {
+//	matrix := [][]int{{1,2,3,4},{5,0,7,8},{0,10,11,12},{12,14,15,0}}
+//	setZeroes(matrix)
+//	println(matrix)
+//}
