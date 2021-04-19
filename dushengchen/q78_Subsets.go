@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package dushengchen
 
 /*
 Submission:
@@ -28,7 +26,7 @@ func subsets(nums []int) [][]int {
 	result = append(result, nums)
 	return result
 }
-
-func main() {
-	fmt.Println(subsets([]int{1,2,3}))
-}
+//
+//func main() {
+//	fmt.Println(subsets([]int{1,2,3}))
+//}
